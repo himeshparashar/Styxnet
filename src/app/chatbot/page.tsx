@@ -1,10 +1,14 @@
-import AiChatBot from '@/components/chatbot'
-import React from 'react'
+import AiChatBot from "@/components/chatbot";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const ChatBot = (props: Props) => {
-  return <AiChatBot />
-}
+  return (
+    <div>
+      <AiChatBot />
+    </div>
+  );
+};
 
-export default ChatBot
+export default ChatBot;

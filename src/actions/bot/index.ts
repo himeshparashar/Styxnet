@@ -305,12 +305,24 @@ export const onAiChatBotAssistant = async (
             chatCompletion.choices[0].message.content as string
           );
 
+          // if (generatedLink) {
+          //   const link = generatedLink[0];
+          //   const response = {
+          //     role: "assistant",
+          //     content: `Great! you can follow the link to proceed`,
+          //     link: link.slice(0, -1),
+          //   };
+
           if (generatedLink) {
             const link = generatedLink[0];
+
+            // Remove any trailing parentheses (single or double)
+            const trimmedLink = link.replace(/\)\(?$/, "");
+
             const response = {
               role: "assistant",
               content: `Great! you can follow the link to proceed`,
-              link: link.slice(0, -1),
+              link: trimmedLink,
             };
 
             await onStoreConversations(

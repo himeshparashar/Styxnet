@@ -19,25 +19,25 @@ const CodeSnippet = ({ id }: Props) => {
     document.head.append(style);
     }
     
-    iframeStyles('
+    iframeStyles(\'
         .chat-frame {
             position: fixed;
             bottom: 50px;
             right: 50px;
             border: none;
         }
-    ')
+    \')
     
-    iframe.src = "http://styxnet.vercel.app/chatbot"
+    iframe.src = "https://styxnet.vercel.app/chatbot"
     iframe.classList.add('chat-frame')
     document.body.appendChild(iframe)
     
     window.addEventListener("message", (e) => {
-        if(e.origin !== "http://styxnet.vercel.app") return null
+        if(e.origin !== "https://styxnet.vercel.app") return null
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("${id}", "http://styxnet.vercel.app/")
+        iframe.contentWindow.postMessage("${id}", "https://styxnet.vercel.app/")
     })
         `;
 
