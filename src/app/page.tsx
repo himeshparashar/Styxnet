@@ -11,11 +11,12 @@ import {
 } from "@/components/ui/card";
 import { pricingCards } from "@/constants/landing-page";
 import clsx from "clsx";
-import { ArrowRightCircleIcon, Check } from "lucide-react";
+import { ArrowRightCircleIcon, Check, Router } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
 import { getMonthName } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export default async function Home() {
   const posts:
@@ -28,6 +29,7 @@ export default async function Home() {
       }[]
     | undefined = await onGetBlogPosts();
   console.log(posts);
+  const router = useRouter()
   return (
     <main>
       <NavBar />
@@ -47,16 +49,18 @@ export default async function Home() {
             Your AI powered sales assistant! Embed Styxnet AI into any website
             with just a snippet of code!
           </p>
-          <Button className="bg-orange font-bold text-white px-4">
+          <Button onClick={()=>{
+            router.push("/auth/signup")
+          }} className="bg-orange font-bold text-white px-4">
             Start For Free
           </Button>
-          <Image
+          {/* <Image
             src="/images/iphoneStyxnet.png"
             width={400}
             height={100}
             alt="Logo"
             className="max-w-lg object-contain"
-          />
+          /> */}
         </div>
       </section>
       <section className="flex justify-center items-center flex-col gap-4 mt-10">
