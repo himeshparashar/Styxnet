@@ -2,14 +2,13 @@ import { useToast } from '@/components/ui/use-toast'
 import { UserLoginProps, UserLoginSchema } from '@/schemas/auth.schema'
 import { useSignIn } from '@clerk/nextjs'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 export const useSignInForm = () => {
   const { isLoaded, setActive, signIn } = useSignIn()
   const [loading, setLoading] = useState<boolean>(false)
-  const router = useRouter()
   const { toast } = useToast()
   const methods = useForm<UserLoginProps>({
     resolver: zodResolver(UserLoginSchema),
@@ -33,7 +32,7 @@ export const useSignInForm = () => {
             description: 'Welcome back!',
           })
           console.log("yoyo")
-          router.push('/dashboard')
+          redirect('/dashboard')
           console.log("pushed")
         }
       } catch (error: any) {

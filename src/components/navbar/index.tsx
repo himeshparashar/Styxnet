@@ -27,7 +27,7 @@ function NavBar() {
         <li>Contact us</li>
       </ul>
       <Link
-        href="/dashboard"
+        href="/sign-up"
         className="bg-orange px-4 py-2 rounded-sm text-white"
       >
         Free Trial
