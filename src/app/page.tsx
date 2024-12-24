@@ -1,4 +1,3 @@
-'use client'
 import { onGetBlogPosts } from "@/actions/landing";
 import NavBar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
 import { getMonthName } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default async function Home() {
   const posts:
@@ -30,7 +29,6 @@ export default async function Home() {
       }[]
     | undefined = await onGetBlogPosts();
   console.log(posts);
-  const router = useRouter()
   return (
     <main>
       <NavBar />
@@ -50,11 +48,11 @@ export default async function Home() {
             Your AI powered sales assistant! Embed Styxnet AI into any website
             with just a snippet of code!
           </p>
-          <Button onClick={()=>{
-            router.push("/auth/sign-up")
-          }} className="bg-orange font-bold text-white px-4">
+          <Link href={'/auth/sign-up'}>
+          <Button className="bg-orange font-bold text-white px-4">
             Start For Free
           </Button>
+          </Link>
           {/* <Image
             src="/images/iphoneStyxnet.png"
             width={400}
