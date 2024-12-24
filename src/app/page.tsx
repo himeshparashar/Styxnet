@@ -1,3 +1,4 @@
+'use client'
 import { onGetBlogPosts } from "@/actions/landing";
 import NavBar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { pricingCards } from "@/constants/landing-page";
 import clsx from "clsx";
-import { ArrowRightCircleIcon, Check, Router } from "lucide-react";
+import { ArrowRightCircleIcon, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
