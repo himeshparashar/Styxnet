@@ -32,7 +32,9 @@ export const useSignInForm = () => {
             title: 'Success',
             description: 'Welcome back!',
           })
+          console.log("yoyo")
           router.push('/dashboard')
+          console.log("pushed")
         }
       } catch (error: any) {
         setLoading(false)
