@@ -1,4 +1,4 @@
-\# Styxnet
+# Styxnet
 
 Styxnet is an AI-powered chatbot platform designed for virtual sales and customer engagement. With Styxnet, users can easily create and deploy intelligent chatbots to their websites in just a few simple steps. The platform enhances customer interaction, streamlines lead capture, and optimizes website experience with advanced AI-driven features.
 
