@@ -22,11 +22,11 @@ const config = {
         cream: '#F5F5F5',
         gravel: '#4E4E4E',
         iridium: '#3F3F3F',
-        orange: '#FFA947',
-        peach: '#FFE0BD',
+        orange: '#10B981', // Changed to emerald green
+        peach: '#D1FAE5', // Changed to light green
         platinum: '#E6E6E6',
         ghost: '#CDCDCD',
-        grandis: '#FFC989',
+        grandis: '#34D399', // Changed to medium green
         porcelain: '#F1F1F1',
         ironside: '#636363',
         border: 'hsl(var(--border))',
